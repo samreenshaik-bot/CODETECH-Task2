@@ -10,6 +10,7 @@
 
 
 ## Overview of the Project
+##  GRADE CALCULATION SYSTEM
 Getting Student's Name (get_student_name function):
 
 Prompts the user to enter the student's name.
