@@ -1,0 +1,48 @@
+/* */
+
+def get_student_name():
+    name = input("Enter the student's name: ")
+    return name
+
+def get_marks():
+    marks = []
+    while True:
+        try:
+            mark = input("Enter a mark (or type 'done' to finish): ")
+            if mark.lower() == 'done':
+                break
+            mark = float(mark)
+            if 0 <= mark <= 100:
+                marks.append(mark)
+            else:
+                print("Please enter a mark between 0 and 100.")
+        except ValueError:
+            print("Invalid input. Please enter a numeric value.")
+    return marks
+
+def calculate_total(marks):
+    return sum(marks)
+
+def calculate_average(marks):
+    if len(marks) > 0:
+        return sum(marks) / len(marks)
+    return 0
+
+def display_results(name, marks):
+    total = calculate_total(marks)
+    average = calculate_average(marks)
+    print(f"\nResults for {name}:")
+    print(f"Total Marks: {total:.2f}")
+    print(f"Average Mark: {average:.2f}")
+
+def main():
+    print("Welcome to the Marks Calculator!")
+    name = get_student_name()
+    marks = get_marks()
+    if marks:
+        display_results(name, marks)
+    else:
+        print("No marks entered.")
+
+if __name__ == "__main__":
+    main()
